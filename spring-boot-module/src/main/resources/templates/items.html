@@ -1,0 +1,23 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Items</title>
+    <link href="webjars/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div th:replace="fragments/header.html"/>
+<div class="container-fluid justify-content-center">
+    <div class="card-group">
+        <div th:each="item : ${items}">
+            <form class="card border-dark" style="padding: 20px; margin: 20px; width: 250px; height: 200px" action="#"
+                  th:object="${item}">
+                <span class="text-lg-center text">Name:</span>
+                <span class="text-lg-center text" th:text="*{name}"></span>
+                <br><span class="text-lg-center text">Status:</span>
+                <span class="text-lg-center text" th:text="*{status}"></span>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
