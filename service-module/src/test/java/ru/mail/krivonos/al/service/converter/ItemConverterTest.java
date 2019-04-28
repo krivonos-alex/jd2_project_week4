@@ -65,5 +65,4 @@ public class ItemConverterTest {
         ItemDTO itemDTO = itemConverter.toDTO(item);
         assertEquals(item.getStatus(), itemDTO.getStatus());
     }
-
 }
