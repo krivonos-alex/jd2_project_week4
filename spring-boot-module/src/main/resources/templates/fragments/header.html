@@ -18,12 +18,12 @@
                 </ul>
             </div>
             <span sec:authorize="isAuthenticated()">
-            <div id="items" class="btn btn-lg" sec:authorize="hasRole('ADMINISTRATOR')">
+            <div id="items" class="btn btn-lg" sec:authorize="hasAuthority('ADMINISTRATOR')">
                 <ul class="nav navbar-nav">
                     <li class="active"><a th:href="@{/users}">Users</a></li>
                 </ul>
             </div>
-            <div id="users" class="btn btn-lg" sec:authorize="hasRole('CUSTOMER')">
+            <div id="users" class="btn btn-lg" sec:authorize="hasAuthority('CUSTOMER')">
                 <ul class="nav navbar-nav">
                     <li class="active"><a th:href="@{/items}">Items</a></li>
                 </ul>

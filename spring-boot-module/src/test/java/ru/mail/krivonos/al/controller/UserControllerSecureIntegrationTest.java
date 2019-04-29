@@ -32,7 +32,7 @@ public class UserControllerSecureIntegrationTest {
                 .build();
     }
 
-    @WithMockUser(roles = {"ADMINISTRATOR"})
+    @WithMockUser(authorities = {"ADMINISTRATOR"})
     @Test
     public void shouldSucceedForUsersPage() throws Exception {
         mockMvc.perform(get("/users")).andExpect(MockMvcResultMatchers.status().isOk());

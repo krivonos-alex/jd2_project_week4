@@ -17,8 +17,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Collection;
 
-import static ru.mail.krivonos.al.controller.constant.RoleConstants.WITH_PREFIX_ADMIN_ROLE_NAME;
-import static ru.mail.krivonos.al.controller.constant.RoleConstants.WITH_PREFIX_CUSTOMER_ROLE_NAME;
+import static ru.mail.krivonos.al.controller.constant.RoleConstants.*;
 import static ru.mail.krivonos.al.controller.constant.URLConstants.ITEMS_PAGE_URL;
 import static ru.mail.krivonos.al.controller.constant.URLConstants.USERS_PAGE_URL;
 
@@ -46,10 +45,10 @@ public class AppAuthenticationSuccessHandler implements AuthenticationSuccessHan
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
         for (GrantedAuthority authority : authorities) {
             switch (authority.getAuthority()) {
-                case WITH_PREFIX_ADMIN_ROLE_NAME:
+                case ADMIN_ROLE_NAME:
                     targetURL = USERS_PAGE_URL;
                     break;
-                case WITH_PREFIX_CUSTOMER_ROLE_NAME:
+                case CUSTOMER_ROLE_NAME:
                     targetURL = ITEMS_PAGE_URL;
             }
         }

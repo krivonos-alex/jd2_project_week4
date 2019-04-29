@@ -27,15 +27,15 @@ CREATE TABLE IF NOT EXISTS User
 );
 
 INSERT INTO Role (name)
-VALUES ('ROLE_ADMINISTRATOR');
+VALUES ('ADMINISTRATOR');
 INSERT INTO Role (name)
-VALUES ('ROLE_CUSTOMER');
+VALUES ('CUSTOMER');
 INSERT INTO User (username, password, role_id)
 VALUES ('admin', '$2a$09$OJhhuE6MFbjADXQVFUm7d.3puJ0PXoic8P.PKgSK1cnpbUvvytSSW',
-        (SELECT id FROM Role WHERE name = 'ROLE_ADMINISTRATOR'));
+        (SELECT id FROM Role WHERE name = 'ADMINISTRATOR'));
 INSERT INTO User (username, password, role_id)
 VALUES ('user', '$2a$09$QujSO5HRvKghLdLJVspYP.hLj9jHYRY2GSuP7FkNT.PRjIK3HST1.',
-        (SELECT id FROM Role WHERE name = 'ROLE_CUSTOMER'));
+        (SELECT id FROM Role WHERE name = 'CUSTOMER'));
 INSERT INTO Item (name, status)
 VALUES ('TestItem', 'READY');
 INSERT INTO Item (name, status)

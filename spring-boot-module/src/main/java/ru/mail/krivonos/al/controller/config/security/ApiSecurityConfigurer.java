@@ -39,7 +39,7 @@ public class ApiSecurityConfigurer extends WebSecurityConfigurerAdapter {
         http.antMatcher(API_USERS_PAGE_URL)
                 .authorizeRequests()
                 .anyRequest()
-                .hasRole(ADMIN_ROLE_NAME)
+                .hasAuthority(ADMIN_ROLE_NAME)
                 .and()
                 .httpBasic()
                 .and()

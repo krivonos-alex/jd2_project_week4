@@ -40,9 +40,9 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers(ITEMS_PAGE_URL)
-                .hasRole(CUSTOMER_ROLE_NAME)
+                .hasAuthority(CUSTOMER_ROLE_NAME)
                 .antMatchers(USERS_PAGE_URL)
-                .hasRole(ADMIN_ROLE_NAME)
+                .hasAuthority(ADMIN_ROLE_NAME)
                 .antMatchers(DEFAULT_PAGE_URL, ABOUT_PAGE_URL, LOGIN_PAGE_URL, LOGOUT_PAGE_URL,
                         ERROR_403_PAGE_URL, BOOTSTRAP_CONTENT_URL)
                 .permitAll()

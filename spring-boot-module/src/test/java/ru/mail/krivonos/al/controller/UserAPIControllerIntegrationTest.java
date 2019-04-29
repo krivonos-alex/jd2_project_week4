@@ -25,7 +25,7 @@ public class UserAPIControllerIntegrationTest {
         userDTO.setUsername("customer3");
         userDTO.setPassword("customer3");
         RoleDTO roleDTO = new RoleDTO();
-        roleDTO.setName("ROLE_CUSTOMER");
+        roleDTO.setName("CUSTOMER");
         userDTO.setRole(roleDTO);
         restTemplate.withBasicAuth("admin", "admin");
         ResponseEntity responseEntity = restTemplate
@@ -40,7 +40,7 @@ public class UserAPIControllerIntegrationTest {
         userDTO.setUsername("user");
         userDTO.setPassword("user");
         RoleDTO roleDTO = new RoleDTO();
-        roleDTO.setName("ROLE_CUSTOMER");
+        roleDTO.setName("CUSTOMER");
         userDTO.setRole(roleDTO);
         ResponseEntity responseEntity = restTemplate
                 .withBasicAuth("admin", "admin")

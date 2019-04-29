@@ -35,7 +35,7 @@ public class ItemControllerIntegrationTest {
                 .build();
     }
 
-    @WithMockUser(roles = {"CUSTOMER"})
+    @WithMockUser(authorities = {"CUSTOMER"})
     @Test
     public void requestForItemsIsSuccessfullyProcessedWithAvailableItemsList() throws Exception {
         this.mockMvc.perform(get("/items").accept(MediaType.parseMediaType("text/html;charset=UTF-8")))

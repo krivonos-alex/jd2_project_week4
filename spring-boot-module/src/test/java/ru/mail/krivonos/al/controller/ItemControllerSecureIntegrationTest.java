@@ -32,7 +32,7 @@ public class ItemControllerSecureIntegrationTest {
                 .build();
     }
 
-    @WithMockUser(roles = {"CUSTOMER"})
+    @WithMockUser(authorities = {"CUSTOMER"})
     @Test
     public void shouldSucceedForItemsPage() throws Exception {
         mockMvc.perform(get("/items")).andExpect(MockMvcResultMatchers.status().isOk());
