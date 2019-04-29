@@ -31,7 +31,7 @@ public class UserAPIControllerIntegrationTest {
         ResponseEntity responseEntity = restTemplate
                 .withBasicAuth("admin", "admin")
                 .postForEntity("http://localhost:8080/api/users", userDTO, ResponseEntity.class);
-        Assert.assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+        Assert.assertEquals(HttpStatus.CREATED, responseEntity.getStatusCode());
     }
 
     @Test

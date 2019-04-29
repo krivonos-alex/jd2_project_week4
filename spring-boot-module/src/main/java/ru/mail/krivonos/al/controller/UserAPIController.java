@@ -34,7 +34,7 @@ public class UserAPIController {
     ) {
         try {
             userService.add(userDTO);
-            return new ResponseEntity(HttpStatus.OK);
+            return new ResponseEntity(HttpStatus.CREATED);
         } catch (IllegalUsernameStateException e) {
             logger.error(e.getMessage(), e);
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
